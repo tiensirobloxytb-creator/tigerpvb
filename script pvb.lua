@@ -1,35 +1,59 @@
-script_key="QCjsJWXRTLfQQWYdGnhqMgeeRSGuCgyn";
+script_key="vkLWbdfieHBhoACQLKrmnDVVSfmqyuPx";
+setfpscap(3)
 
-getgenv().pvbConfig = {
-    AUTO_UPDATE_RESTART = true,
-    MAX_FPS = 2,  -- This will override setfpscap()
-    LOW_CPU = true,
-    MAX_REBIRTH = 2,  -- Stop rebirth at set amount
-    FORCE_REBIRTH_IGNORE_KEEP_BRAINROT = true,  -- Ignore KEEP_BRAINROT related config until max rebirth
-    FROST_GRENADE_TARGET_MAX_HP = 100000,  -- Use frost grenade 100k+ hp brainrot
+getgenv().gagConfig = {
+    -- Event:
+    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Paradise Egg", "Fall Egg", "Loquat", "Feijoa", "Pitcher Plant" },
+    BUY_EVENT_SHOP = { "Spooky Egg", ["Ghost Bear"] = 8, "Reaper" },
     
-    OPEN_LUCKY_EGG = {"Godly Lucky Egg", "Secret Lucky Egg", "Meme Lucky Egg"},
-    FUSE_PLANT = {"Mr Carrot", "Pumpkin", "Sunflower", "Dragon Fruit", "Eggplant", "Watermelon"},  -- Auto keep & fuse required plant + brainrot
+    MAX_PLANTS = 80,
+    DESTROY_UNTIL_MIN_PLANTS = 50,
+    KEEP_SEEDS = { "Bone Blossom" },
+    KEEP_SEEDS_AFTER_MAX_PLANTS = {},
 
-    BUY_SEED_SHOP = {["Cactus"] = 5, ["Strawberry"] = 5, ["Pumpkin"] = 5, ["Sunflower"] = 5, ["Dragon Fruit"] = 5, ["Eggplant"] = 5, ["Watermelon"] = 5, "Cocotank", "Carnivorous Plant", "Mr Carrot", "Tomatrio", "Shroombino", "Mango", "King Limone"},
-    BUY_GEAR_SHOP = {"Frost Grenade", "Frost Blower"},
-    KEEP_SEED = {},
-    KEEP_PLANT_RARITY = {"Secret", "Limited"},
-    KEEP_BRAINROT_MONEY_PER_SECOND = 50000,  -- Number
-    KEEP_BRAINROT_RARITY = {},
+    PLACE_COSMETIC = { "Cooking Kit" },
+    
+    -- General:
+    AUTO_UPDATE_RESTART = true,
+    REDEEM_CODES = {},
+    EXTRA_PET_SLOTS = 5,
+    EXTRA_EGG_SLOTS = 5,
+    MAX_REBIRTH_SHECKLES = 0,
+    ADD_FRIEND = true,
+    OPEN_ALL_SEED_PACK = true,
+    COLLECT_FRUIT_PER_SECOND = 3,
 
-    SELL_BRAINROT_DELAY = 20,
-    SELL_PLANT_DELAY = 20,
+    BUY_COSMETIC_SHOP = { ["Cooking Kit"] = 3 },
+    
+    BUY_EGGS = { "Spooky Egg", "Jungle Egg", "Bug Egg", "Bee Egg", "Paradise Egg", "Mythical Egg", "Rare Summer Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
+    PLANT_EGGS = { "Spooky Egg", "Jungle Egg", "Fall Egg", "Enchanted Egg", "Sprout Egg", "Gourmet Egg", "Corrupted Zen Egg", "Zen Egg", "Dinosaur Egg", "Primal Egg", "Anti Bee Egg", "Bee Egg", "Night Egg", "Bug Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
+    
+    BUY_SEED_SHOP = { "Great Pumpkin", "Crimson Thorn", "Romanesco", "Elder Strawberry", "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk", "Cacao", "Pepper", "Mushroom", "Grape", "Mango", "Dragon Fruit", "Cactus", ["Coconut"] = 50, ["Bamboo"] = 50, ["Apple"] = 50, ["Pumpkin"] = 50, ["Watermelon"] = 50, ["Daffodil"] = 50, ["Corn"] = 50, ["Tomato"] = 50, ["Orange Tulip"] = 50, ["Blueberry"] = 50, ["Strawberry"] = 50, ["Carrot"] = 50 },
+    
+    FAVOURITE_FRUIT_MUTATIONS = {},
+    SKIP_HARVEST_MUTATIONS = {},
 
-    -- Webhook
-    BRAINROT_WEBHOOK_URL = "",
-    DISCORD_ID = "",
-    NOTIFY_RARITY = {},
-    NOTIFY_MONEY_PER_SECOND = 10000,
-    WEBHOOK_NOTE = "",
+    KEEP_PETS = { "Headless Horseman", "Reaper", "Fortune Squirrel", "Chinchilla", "Chubby Chipmunk", "Tiger", "Red Panda", "Barn Owl", "Swan", "Space Squirrel", "Sugar Glider", "Phoenix", "Drake", "Wisp", "Luminous Sprite", "Cockatrice", ["Glimmering Sprite"] = 8, "Gnome", "Griffin", "Golden Goose", "Spriggan", "Junkbot", "Gorilla Chef", "Lobster Thermidor", "French Fry Ferret", "Corrupted Kitsune", "Raiju", "Mizuchi", "Kitsune", "Koi", "Bald Eagle", "Ankylosaurus", "Spinosaurus", "Brontosaurus", "T-Rex", "Seal", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox", "Hyacinth Macaw", "Pack Bee", "Petal Bee", "Bear Bee", "Hamster", "Blood Owl", "Cooked Owl", "Golden Bee", "Owl", "Firefly", "Chicken Zombie", ["Blood Kiwi"] = 2, ["Capybara"] = 1, ["Starfish"] = 2, ["Rooster"] = 2, ["Chicken"] = 8 },
+    KEEP_PETS_WEIGHT = 7,
+    KEEP_PETS_AGE = 90,
+    
+    EQUIP_PETS = { ["Ghost Bear"] = 8 },
+
+    BUY_GEAR_SHOP = { "Grandmaster Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler", "Trading Ticket", "Watering Can", "Levelup Lollipop" },
+    USE_SPRINKLER = { "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Grandmaster Sprinkler" },
+
+    PET_WEBHOOK_URL = "https://discord.com/api/webhooks/1336384242745081886/wWXdBI07zXi6bq3pnHOFGxxXEPybn3Up6U42oUQMa3KZCjv3YohRohr2om7zN1DX5qzv",
     SHOW_PUBLIC_DISCORD_ID = true,
+    NOTIFY_PETS = { "Headless Horseman", "Reaper", "Fortune Squirrel", "Chinchilla", "Tiger", "Barn Owl", "Swan", "Marmot", "Space Squirrel", "Sugar Glider", "Phoenix", "Cockatrice", "Gnome", "Griffin", "Golden Goose", "Corrupted Kitsune", "Raiju", "Mizuchi", "Kitsune", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox" },
+    NOTIFY_PETS_WEIGHT = 7,
+    DISCORD_ID = "403064022141763614",
+    WEBHOOK_NOTE = "",
     SHOW_WEBHOOK_USERNAME = true,
     SHOW_WEBHOOK_JOBID = true,
+
+    KICK_AFTER_GIFT_PET = false,
+    GIFT_USERNAME = {},
+    GIFT_PET = {},
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fb22292fbed43e6aeb163a93df81a968.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c916e5b90dc37c71ecf1ec00dfce3d5d.lua"))()
