@@ -1,4 +1,4 @@
-script_key="HMlpFfLTKfHslLwEpYuoCTEWjmFkOwQp";
+script_key="HLOtbQEFgePoVMdiLMHbjdfmIokuTHwJ";
 
 getgenv().pvbConfig = {
     AUTO_UPDATE_RESTART = true,
@@ -33,3 +33,4 @@ getgenv().pvbConfig = {
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fb22292fbed43e6aeb163a93df81a968.lua"))()
+
